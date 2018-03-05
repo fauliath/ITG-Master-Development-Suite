@@ -1,0 +1,9 @@
+S:\Development\GitHub Repositories\ITG-Master-Development-Suite\Master\bin\Debug\Master.exe.config
+S:\Development\GitHub Repositories\ITG-Master-Development-Suite\Master\bin\Debug\Master.exe
+S:\Development\GitHub Repositories\ITG-Master-Development-Suite\Master\bin\Debug\Master.pdb
+S:\Development\GitHub Repositories\ITG-Master-Development-Suite\Master\obj\Debug\Master.MainWindow.resources
+S:\Development\GitHub Repositories\ITG-Master-Development-Suite\Master\obj\Debug\Master.Properties.Resources.resources
+S:\Development\GitHub Repositories\ITG-Master-Development-Suite\Master\obj\Debug\Master.csproj.GenerateResource.Cache
+S:\Development\GitHub Repositories\ITG-Master-Development-Suite\Master\obj\Debug\Master.csproj.CoreCompileInputs.cache
+S:\Development\GitHub Repositories\ITG-Master-Development-Suite\Master\obj\Debug\Master.exe
+S:\Development\GitHub Repositories\ITG-Master-Development-Suite\Master\obj\Debug\Master.pdb
