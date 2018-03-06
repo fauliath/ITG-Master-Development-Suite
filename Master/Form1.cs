@@ -22,13 +22,30 @@ namespace Master
 
         private void Move_Form(object sender, MouseEventArgs e) { FormMovement.ReleaseCapture(); FormMovement.SendMessage(this.Handle, 0xA1, 0x2, 0); }
 
+        #endregion
+
+        #region Variables
+
+        // Objects
+        PathHandling path_handling = new PathHandling();
 
 
         #endregion
 
-        private void Button_Log_Locations_Click(object sender, EventArgs e)
-        {
+        #region Errors
 
-        }
+        private void Button_Log_Locations_Click(object sender, EventArgs e) { Error_SetErrorPath(); }
+
+        #endregion
+
+        #region Metadata Extractor
+
+        private void Button_Metadata_Folder_Click(object sender, EventArgs e) { Metadata_SetFolder(); }
+
+        private void Checkbox_Metadata_All_CheckedChanged(object sender, EventArgs e) { Metadata_SelectAllCheckboxes(); }
+
+        private void Button_Metadata_Begin_Click(object sender, EventArgs e) { Metadata_StartBackgroundWorker(); }
+
+        #endregion
     }
 }
