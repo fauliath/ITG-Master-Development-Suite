@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Security.Principal;
 using System.Windows.Forms;
 
 namespace Master
@@ -92,7 +93,6 @@ namespace Master
                 {
                     foreach (string property in properties)
                     {
-
                         stream.Write(property + ",");
                         PrintToOutput("extracted information from the file '" + Delimon.Win32.IO.Path.GetFileName(file) + "' data: '"+ property + "'");
                     }
@@ -125,7 +125,7 @@ namespace Master
                 if (Checkbox_Metadata_Path.Checked)
                     try
                     {
-                        properties.Add(Delimon.Win32.IO.Path.GetFileName(file));
+                        properties.Add(System.IO.Path.GetFullPath(file));
                     }
                     catch (Exception e)
                     {
@@ -136,7 +136,7 @@ namespace Master
                 if (Checkbox_Metadata_Extension.Checked)
                     try
                     {
-                        properties.Add(Delimon.Win32.IO.Path.GetFileName(file));
+                        properties.Add(Delimon.Win32.IO.Path.GetExtension(file));
                     }
                     catch (Exception e)
                     {
@@ -147,7 +147,7 @@ namespace Master
                 if (Checkbox_Metadata_Modified.Checked)
                     try
                     {
-                        properties.Add(Delimon.Win32.IO.Path.GetFileName(file));
+                        properties.Add(fileInfo.LastWriteTime.ToString());
                     }
                     catch (Exception e)
                     {
@@ -158,7 +158,7 @@ namespace Master
                 if (Checkbox_Metadata_Accessed.Checked)
                     try
                     {
-                        properties.Add(Delimon.Win32.IO.Path.GetFileName(file));
+                        properties.Add(fileInfo.LastAccessTime.ToString());
                     }
                     catch (Exception e)
                     {
@@ -169,7 +169,7 @@ namespace Master
                 if (Checkbox_Metadata_Created.Checked)
                     try
                     {
-                        properties.Add(Delimon.Win32.IO.Path.GetFileName(file));
+                        properties.Add(fileInfo.CreationTime.ToString());
                     }
                     catch (Exception e)
                     {
@@ -180,7 +180,7 @@ namespace Master
                 if (Checkbox_Metadata_ReadOnly.Checked)
                     try
                     {
-                        properties.Add(Delimon.Win32.IO.Path.GetFileName(file));
+                        properties.Add(fileInfo.IsReadOnly.ToString());
                     }
                     catch (Exception e)
                     {
@@ -191,7 +191,7 @@ namespace Master
                 if (Checkbox_Metadata_Size.Checked)
                     try
                     {
-                        properties.Add(Delimon.Win32.IO.Path.GetFileName(file));
+                        properties.Add(fileInfo.Length.ToString());
                     }
                     catch (Exception e)
                     {
@@ -202,7 +202,7 @@ namespace Master
                 if (Checkbox_Metadata_Author.Checked)
                     try
                     {
-                        properties.Add(Delimon.Win32.IO.Path.GetFileName(file));
+                        properties.Add(System.IO.File.GetAccessControl(file).GetOwner(typeof(NTAccount)).ToString());
                     }
                     catch (Exception e)
                     {
@@ -262,6 +262,7 @@ namespace Master
             Label_Metadata_View_Output.Visible = true;
             Textbox_Metadata_Folder.Enabled = true;
             Button_Metadata_Folder.Enabled = true;
+            Label_Operation_Finished.Visible = true;
             Label_Operation_Finished.Text = "Operation finished at: " + DateTime.Now;
         }
     }

@@ -42,6 +42,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Tab_Metadata = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.Label_Metadata_View_Output = new System.Windows.Forms.Label();
             this.Panel_Metadata_Checkboxes = new System.Windows.Forms.Panel();
             this.Checkbox_Metadata_All = new System.Windows.Forms.CheckBox();
             this.Checkbox_Metadata_Size = new System.Windows.Forms.CheckBox();
@@ -57,17 +59,15 @@
             this.Label_Metadata_Folder = new System.Windows.Forms.Label();
             this.Textbox_Metadata_Folder = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Label_Operation_Finished = new System.Windows.Forms.Label();
             this.Label_Operation = new System.Windows.Forms.Label();
             this.Label_Operation_Start_Time = new System.Windows.Forms.Label();
             this.Textbox_Output = new System.Windows.Forms.TextBox();
-            this.Label_Metadata_View_Output = new System.Windows.Forms.Label();
             this.Button_Log_Locations = new Master.FlatButton();
             this.Button_Metadata_Begin = new Master.FlatButton();
             this.Button_Metadata_Folder = new Master.FlatButton();
             this.Button_Minimise = new Master.FlatButton();
             this.Button_Close = new Master.FlatButton();
-            this.label6 = new System.Windows.Forms.Label();
-            this.Label_Operation_Finished = new System.Windows.Forms.Label();
             this.Panel_Title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Logo)).BeginInit();
             this.Tab_Panel.SuspendLayout();
@@ -141,6 +141,7 @@
             // 
             this.Radio_Carry_On.AutoSize = true;
             this.Radio_Carry_On.Checked = true;
+            this.Radio_Carry_On.Enabled = false;
             this.Radio_Carry_On.Location = new System.Drawing.Point(522, 369);
             this.Radio_Carry_On.Name = "Radio_Carry_On";
             this.Radio_Carry_On.Size = new System.Drawing.Size(147, 21);
@@ -152,6 +153,7 @@
             // Radio_Stop
             // 
             this.Radio_Stop.AutoSize = true;
+            this.Radio_Stop.Enabled = false;
             this.Radio_Stop.Location = new System.Drawing.Point(365, 369);
             this.Radio_Stop.Name = "Radio_Stop";
             this.Radio_Stop.Size = new System.Drawing.Size(124, 21);
@@ -163,6 +165,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Enabled = false;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semilight", 11.75F);
             this.label4.Location = new System.Drawing.Point(250, 319);
             this.label4.Name = "label4";
@@ -172,6 +175,7 @@
             // 
             // Textbox_Log_Locations
             // 
+            this.Textbox_Log_Locations.Enabled = false;
             this.Textbox_Log_Locations.Location = new System.Drawing.Point(206, 212);
             this.Textbox_Log_Locations.Name = "Textbox_Log_Locations";
             this.Textbox_Log_Locations.Size = new System.Drawing.Size(618, 25);
@@ -180,6 +184,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Enabled = false;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semilight", 11.75F);
             this.label3.Location = new System.Drawing.Point(99, 213);
             this.label3.Name = "label3";
@@ -211,12 +216,12 @@
             // 
             this.Tab_Metadata.Controls.Add(this.label6);
             this.Tab_Metadata.Controls.Add(this.Label_Metadata_View_Output);
-            this.Tab_Metadata.Controls.Add(this.Button_Metadata_Begin);
             this.Tab_Metadata.Controls.Add(this.Panel_Metadata_Checkboxes);
             this.Tab_Metadata.Controls.Add(this.label5);
-            this.Tab_Metadata.Controls.Add(this.Button_Metadata_Folder);
             this.Tab_Metadata.Controls.Add(this.Label_Metadata_Folder);
             this.Tab_Metadata.Controls.Add(this.Textbox_Metadata_Folder);
+            this.Tab_Metadata.Controls.Add(this.Button_Metadata_Begin);
+            this.Tab_Metadata.Controls.Add(this.Button_Metadata_Folder);
             this.Tab_Metadata.Location = new System.Drawing.Point(4, 26);
             this.Tab_Metadata.Name = "Tab_Metadata";
             this.Tab_Metadata.Padding = new System.Windows.Forms.Padding(3);
@@ -224,6 +229,28 @@
             this.Tab_Metadata.TabIndex = 1;
             this.Tab_Metadata.Text = "Metadata";
             this.Tab_Metadata.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semilight", 7.75F);
+            this.label6.Location = new System.Drawing.Point(116, 131);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(272, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Your output CSV file will be placed in the above directory.";
+            this.label6.Visible = false;
+            // 
+            // Label_Metadata_View_Output
+            // 
+            this.Label_Metadata_View_Output.AutoSize = true;
+            this.Label_Metadata_View_Output.Font = new System.Drawing.Font("Segoe UI Semilight", 7.75F);
+            this.Label_Metadata_View_Output.Location = new System.Drawing.Point(388, 447);
+            this.Label_Metadata_View_Output.Name = "Label_Metadata_View_Output";
+            this.Label_Metadata_View_Output.Size = new System.Drawing.Size(195, 13);
+            this.Label_Metadata_View_Output.TabIndex = 7;
+            this.Label_Metadata_View_Output.Text = "Navigate to the output tab to view status";
+            this.Label_Metadata_View_Output.Visible = false;
             // 
             // Panel_Metadata_Checkboxes
             // 
@@ -395,6 +422,17 @@
             this.tabPage1.Text = "Output";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // Label_Operation_Finished
+            // 
+            this.Label_Operation_Finished.AutoSize = true;
+            this.Label_Operation_Finished.Font = new System.Drawing.Font("Segoe UI Semilight", 10.75F);
+            this.Label_Operation_Finished.Location = new System.Drawing.Point(550, 62);
+            this.Label_Operation_Finished.Name = "Label_Operation_Finished";
+            this.Label_Operation_Finished.Size = new System.Drawing.Size(148, 20);
+            this.Label_Operation_Finished.TabIndex = 3;
+            this.Label_Operation_Finished.Text = "Operation finished at:";
+            this.Label_Operation_Finished.Visible = false;
+            // 
             // Label_Operation
             // 
             this.Label_Operation.AutoSize = true;
@@ -425,20 +463,10 @@
             this.Textbox_Output.Size = new System.Drawing.Size(926, 466);
             this.Textbox_Output.TabIndex = 0;
             // 
-            // Label_Metadata_View_Output
-            // 
-            this.Label_Metadata_View_Output.AutoSize = true;
-            this.Label_Metadata_View_Output.Font = new System.Drawing.Font("Segoe UI Semilight", 7.75F);
-            this.Label_Metadata_View_Output.Location = new System.Drawing.Point(388, 447);
-            this.Label_Metadata_View_Output.Name = "Label_Metadata_View_Output";
-            this.Label_Metadata_View_Output.Size = new System.Drawing.Size(195, 13);
-            this.Label_Metadata_View_Output.TabIndex = 7;
-            this.Label_Metadata_View_Output.Text = "Navigate to the output tab to view status";
-            this.Label_Metadata_View_Output.Visible = false;
-            // 
             // Button_Log_Locations
             // 
             this.Button_Log_Locations.BackColor = System.Drawing.Color.Silver;
+            this.Button_Log_Locations.Enabled = false;
             this.Button_Log_Locations.FlatAppearance.BorderSize = 0;
             this.Button_Log_Locations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Button_Log_Locations.Location = new System.Drawing.Point(830, 212);
@@ -513,28 +541,6 @@
             this.Button_Close.Text = "X";
             this.Button_Close.UseVisualStyleBackColor = false;
             this.Button_Close.Click += new System.EventHandler(this.Button_Close_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semilight", 7.75F);
-            this.label6.Location = new System.Drawing.Point(116, 131);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(272, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Your output CSV file will be placed in the above directory.";
-            this.label6.Visible = false;
-            // 
-            // Label_Operation_Finished
-            // 
-            this.Label_Operation_Finished.AutoSize = true;
-            this.Label_Operation_Finished.Font = new System.Drawing.Font("Segoe UI Semilight", 10.75F);
-            this.Label_Operation_Finished.Location = new System.Drawing.Point(550, 62);
-            this.Label_Operation_Finished.Name = "Label_Operation_Finished";
-            this.Label_Operation_Finished.Size = new System.Drawing.Size(148, 20);
-            this.Label_Operation_Finished.TabIndex = 3;
-            this.Label_Operation_Finished.Text = "Operation finished at:";
-            this.Label_Operation_Finished.Visible = false;
             // 
             // MainWindow
             // 
