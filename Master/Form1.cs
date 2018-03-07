@@ -16,7 +16,7 @@ namespace Master
 
         public MainWindow() { InitializeComponent(); }
 
-        private void Button_Close_Click(object sender, EventArgs e) { Close(); }
+        private void Button_Close_Click(object sender, EventArgs e) { Operation_Running_Prevent_Close(); }
 
         private void Button_Minimise_Click(object sender, EventArgs e) { WindowState = FormWindowState.Minimized; }
 
@@ -29,7 +29,8 @@ namespace Master
         // Objects
         PathHandling path_handling = new PathHandling();
 
-
+        public bool operation_Is_Running = false;
+        
         #endregion
 
         #region Errors

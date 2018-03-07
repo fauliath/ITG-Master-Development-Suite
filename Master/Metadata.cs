@@ -72,15 +72,8 @@ namespace Master
             worker.RunWorkerCompleted += Metadata_RunWorkerCompleted;
             worker.RunWorkerAsync();
 
-            Panel_Metadata_Checkboxes.Enabled = false;
-            Button_Metadata_Begin.Text = "Running...";
-            Button_Metadata_Begin.Enabled = false;
-            Label_Metadata_View_Output.Visible = true;
-            Textbox_Metadata_Folder.Enabled = false;
-            Button_Metadata_Folder.Enabled = false;
-            Textbox_Output.Text = "";
-            Label_Operation.Text = "Extracting metadata from " + metadata_folder;
-            Label_Operation_Start_Time.Text = "Operation started at: " + DateTime.Now;
+            Disable_All_Input();
+            operation_Is_Running = true;
         }
 
         private void Metadata_DoWork(object sender, DoWorkEventArgs e)
@@ -88,25 +81,34 @@ namespace Master
             metadata_csv_filename = Textbox_Metadata_Output_Location.Text;
 
             // must be specifically told to use Delimon since this allows long filenames, and System.IO doesn't.
-            string[] files = (Delimon.Win32.IO.Directory.GetFiles(metadata_folder, "*", Delimon.Win32.IO.SearchOption.AllDirectories));
-
-            Metadata_WriteHeadersToFile();
-
-            foreach (string file in files)
+            try
             {
-                List<string> properties = Get_Metadata(file);
+                string[] files = (Delimon.Win32.IO.Directory.GetFiles(metadata_folder, "*", Delimon.Win32.IO.SearchOption.AllDirectories));
 
-                using (StreamWriter stream = new StreamWriter(metadata_csv_filename, true))
+                Metadata_WriteHeadersToFile();
+
+                foreach (string file in files)
                 {
-                    foreach (string property in properties)
-                    {
-                        stream.Write(property + ",");
-                        PrintToOutput("extracted information from the file '" + Delimon.Win32.IO.Path.GetFileName(file) + "' data: '"+ property + "'");
-                    }
+                    List<string> properties = Get_Metadata(file);
 
-                    stream.Write(Environment.NewLine);
+                    using (StreamWriter stream = new StreamWriter(metadata_csv_filename, true))
+                    {
+                        foreach (string property in properties)
+                        {
+                            stream.Write(property + ",");
+                            PrintToOutput("extracted information from the file '" + Delimon.Win32.IO.Path.GetFileName(file) + "' data: '" + property + "'");
+                        }
+
+                        stream.Write(Environment.NewLine);
+                    }
                 }
+            } catch (Exception ex)
+            {
+                PrintToOutput(ex.Message);
             }
+            
+
+            
         }
 
         private List<string> Get_Metadata(string file)
@@ -278,14 +280,8 @@ namespace Master
 
         private void Metadata_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            Panel_Metadata_Checkboxes.Enabled = true;
-            Button_Metadata_Begin.Text = "Begin Operation";
-            Button_Metadata_Begin.Enabled = true;
-            Label_Metadata_View_Output.Visible = true;
-            Textbox_Metadata_Folder.Enabled = true;
-            Button_Metadata_Folder.Enabled = true;
-            Label_Operation_Finished.Visible = true;
-            Label_Operation_Finished.Text = "Operation finished at: " + DateTime.Now;
+            Enable_All_Input();
+            operation_Is_Running = false;
         }
 
         public void Metadata_Set_Output_File()

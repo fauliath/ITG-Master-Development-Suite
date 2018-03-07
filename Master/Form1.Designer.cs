@@ -34,7 +34,7 @@
             this.Button_Close = new Master.FlatButton();
             this.Picture_Logo = new System.Windows.Forms.PictureBox();
             this.Panel_Body = new System.Windows.Forms.Panel();
-            this.Tab_Panel = new System.Windows.Forms.TabControl();
+            this.Page_Delete = new System.Windows.Forms.TabControl();
             this.Page_Configuration = new System.Windows.Forms.TabPage();
             this.Radio_Carry_On = new System.Windows.Forms.RadioButton();
             this.Radio_Stop = new System.Windows.Forms.RadioButton();
@@ -44,7 +44,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Tab_Metadata = new System.Windows.Forms.TabPage();
+            this.Page_Metadata = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.Textbox_Metadata_Output_Location = new System.Windows.Forms.TextBox();
             this.Button_Metadata_Output_Location = new Master.FlatButton();
@@ -65,19 +66,34 @@
             this.Textbox_Metadata_Folder = new System.Windows.Forms.TextBox();
             this.Button_Metadata_Begin = new Master.FlatButton();
             this.Button_Metadata_Folder = new Master.FlatButton();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Page_Output = new System.Windows.Forms.TabPage();
             this.Label_Operation_Finished = new System.Windows.Forms.Label();
             this.Label_Operation = new System.Windows.Forms.Label();
             this.Label_Operation_Start_Time = new System.Windows.Forms.Label();
             this.Textbox_Output = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.Button_Delete_Folder_Picker = new Master.FlatButton();
+            this.Button_Delete_Begin = new Master.FlatButton();
+            this.Textbox_Delete_Folder_Path = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.Label_Delete_Begin = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Checkbox_Delete_All = new System.Windows.Forms.CheckBox();
+            this.Checkbox_Delete_Metadata = new System.Windows.Forms.CheckBox();
+            this.Checkbox_Delete_Encrypt = new System.Windows.Forms.CheckBox();
+            this.Checkbox_Delete_Truncate = new System.Windows.Forms.CheckBox();
+            this.Checkbox_Delete_Obfuscate = new System.Windows.Forms.CheckBox();
+            this.Checkbox_Delete_Overwrite = new System.Windows.Forms.CheckBox();
             this.Panel_Title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Logo)).BeginInit();
-            this.Tab_Panel.SuspendLayout();
+            this.Page_Delete.SuspendLayout();
             this.Page_Configuration.SuspendLayout();
-            this.Tab_Metadata.SuspendLayout();
+            this.Page_Metadata.SuspendLayout();
             this.Panel_Metadata_Checkboxes.SuspendLayout();
+            this.Page_Output.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel_Title
@@ -141,17 +157,18 @@
             this.Panel_Body.Size = new System.Drawing.Size(996, 625);
             this.Panel_Body.TabIndex = 1;
             // 
-            // Tab_Panel
+            // Page_Delete
             // 
-            this.Tab_Panel.Controls.Add(this.Page_Configuration);
-            this.Tab_Panel.Controls.Add(this.Tab_Metadata);
-            this.Tab_Panel.Controls.Add(this.tabPage1);
-            this.Tab_Panel.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Tab_Panel.Location = new System.Drawing.Point(2, 25);
-            this.Tab_Panel.Name = "Tab_Panel";
-            this.Tab_Panel.SelectedIndex = 0;
-            this.Tab_Panel.Size = new System.Drawing.Size(999, 625);
-            this.Tab_Panel.TabIndex = 1;
+            this.Page_Delete.Controls.Add(this.Page_Configuration);
+            this.Page_Delete.Controls.Add(this.Page_Metadata);
+            this.Page_Delete.Controls.Add(this.tabPage1);
+            this.Page_Delete.Controls.Add(this.Page_Output);
+            this.Page_Delete.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Page_Delete.Location = new System.Drawing.Point(2, 25);
+            this.Page_Delete.Name = "Page_Delete";
+            this.Page_Delete.SelectedIndex = 0;
+            this.Page_Delete.Size = new System.Drawing.Size(999, 625);
+            this.Page_Delete.TabIndex = 1;
             // 
             // Page_Configuration
             // 
@@ -256,32 +273,43 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 14.75F);
-            this.label1.Location = new System.Drawing.Point(328, 13);
+            this.label1.Location = new System.Drawing.Point(400, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(341, 28);
+            this.label1.Size = new System.Drawing.Size(166, 28);
             this.label1.TabIndex = 1;
-            this.label1.Text = "This is the IT Group Development Suite.";
+            this.label1.Text = "IT Group C# Tools.";
             // 
-            // Tab_Metadata
+            // Page_Metadata
             // 
-            this.Tab_Metadata.Controls.Add(this.label6);
-            this.Tab_Metadata.Controls.Add(this.label8);
-            this.Tab_Metadata.Controls.Add(this.Textbox_Metadata_Output_Location);
-            this.Tab_Metadata.Controls.Add(this.Button_Metadata_Output_Location);
-            this.Tab_Metadata.Controls.Add(this.Label_Metadata_View_Output);
-            this.Tab_Metadata.Controls.Add(this.Panel_Metadata_Checkboxes);
-            this.Tab_Metadata.Controls.Add(this.label5);
-            this.Tab_Metadata.Controls.Add(this.Label_Metadata_Folder);
-            this.Tab_Metadata.Controls.Add(this.Textbox_Metadata_Folder);
-            this.Tab_Metadata.Controls.Add(this.Button_Metadata_Begin);
-            this.Tab_Metadata.Controls.Add(this.Button_Metadata_Folder);
-            this.Tab_Metadata.Location = new System.Drawing.Point(4, 26);
-            this.Tab_Metadata.Name = "Tab_Metadata";
-            this.Tab_Metadata.Padding = new System.Windows.Forms.Padding(3);
-            this.Tab_Metadata.Size = new System.Drawing.Size(991, 595);
-            this.Tab_Metadata.TabIndex = 1;
-            this.Tab_Metadata.Text = "Metadata";
-            this.Tab_Metadata.UseVisualStyleBackColor = true;
+            this.Page_Metadata.Controls.Add(this.label6);
+            this.Page_Metadata.Controls.Add(this.label8);
+            this.Page_Metadata.Controls.Add(this.Textbox_Metadata_Output_Location);
+            this.Page_Metadata.Controls.Add(this.Button_Metadata_Output_Location);
+            this.Page_Metadata.Controls.Add(this.Label_Metadata_View_Output);
+            this.Page_Metadata.Controls.Add(this.Panel_Metadata_Checkboxes);
+            this.Page_Metadata.Controls.Add(this.label5);
+            this.Page_Metadata.Controls.Add(this.Label_Metadata_Folder);
+            this.Page_Metadata.Controls.Add(this.Textbox_Metadata_Folder);
+            this.Page_Metadata.Controls.Add(this.Button_Metadata_Begin);
+            this.Page_Metadata.Controls.Add(this.Button_Metadata_Folder);
+            this.Page_Metadata.Location = new System.Drawing.Point(4, 26);
+            this.Page_Metadata.Name = "Page_Metadata";
+            this.Page_Metadata.Padding = new System.Windows.Forms.Padding(3);
+            this.Page_Metadata.Size = new System.Drawing.Size(991, 595);
+            this.Page_Metadata.TabIndex = 1;
+            this.Page_Metadata.Text = "Metadata";
+            this.Page_Metadata.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semilight", 7.75F);
+            this.label6.Location = new System.Drawing.Point(119, 208);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(254, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "You can dynamically create the file path in this output";
+            this.label6.Visible = false;
             // 
             // label8
             // 
@@ -515,19 +543,19 @@
             this.Button_Metadata_Folder.UseVisualStyleBackColor = false;
             this.Button_Metadata_Folder.Click += new System.EventHandler(this.Button_Metadata_Folder_Click);
             // 
-            // tabPage1
+            // Page_Output
             // 
-            this.tabPage1.Controls.Add(this.Label_Operation_Finished);
-            this.tabPage1.Controls.Add(this.Label_Operation);
-            this.tabPage1.Controls.Add(this.Label_Operation_Start_Time);
-            this.tabPage1.Controls.Add(this.Textbox_Output);
-            this.tabPage1.Location = new System.Drawing.Point(4, 26);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(991, 595);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Output";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.Page_Output.Controls.Add(this.Label_Operation_Finished);
+            this.Page_Output.Controls.Add(this.Label_Operation);
+            this.Page_Output.Controls.Add(this.Label_Operation_Start_Time);
+            this.Page_Output.Controls.Add(this.Textbox_Output);
+            this.Page_Output.Location = new System.Drawing.Point(4, 26);
+            this.Page_Output.Name = "Page_Output";
+            this.Page_Output.Padding = new System.Windows.Forms.Padding(3);
+            this.Page_Output.Size = new System.Drawing.Size(991, 595);
+            this.Page_Output.TabIndex = 2;
+            this.Page_Output.Text = "Output";
+            this.Page_Output.UseVisualStyleBackColor = true;
             // 
             // Label_Operation_Finished
             // 
@@ -570,23 +598,177 @@
             this.Textbox_Output.Size = new System.Drawing.Size(926, 466);
             this.Textbox_Output.TabIndex = 0;
             // 
-            // label6
+            // Button_Delete_Folder_Picker
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semilight", 7.75F);
-            this.label6.Location = new System.Drawing.Point(119, 208);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(254, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "You can dynamically create the file path in this output";
-            this.label6.Visible = false;
+            this.Button_Delete_Folder_Picker.BackColor = System.Drawing.Color.Silver;
+            this.Button_Delete_Folder_Picker.FlatAppearance.BorderSize = 0;
+            this.Button_Delete_Folder_Picker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Delete_Folder_Picker.Font = new System.Drawing.Font("Segoe UI Semilight", 12.75F);
+            this.Button_Delete_Folder_Picker.ForeColor = System.Drawing.Color.Black;
+            this.Button_Delete_Folder_Picker.Location = new System.Drawing.Point(848, 76);
+            this.Button_Delete_Folder_Picker.Name = "Button_Delete_Folder_Picker";
+            this.Button_Delete_Folder_Picker.Size = new System.Drawing.Size(37, 25);
+            this.Button_Delete_Folder_Picker.TabIndex = 2;
+            this.Button_Delete_Folder_Picker.TabStop = false;
+            this.Button_Delete_Folder_Picker.Text = "...";
+            this.Button_Delete_Folder_Picker.UseVisualStyleBackColor = false;
+            // 
+            // Button_Delete_Begin
+            // 
+            this.Button_Delete_Begin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Button_Delete_Begin.FlatAppearance.BorderSize = 0;
+            this.Button_Delete_Begin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Delete_Begin.Font = new System.Drawing.Font("Segoe UI Semilight", 13.75F);
+            this.Button_Delete_Begin.ForeColor = System.Drawing.Color.White;
+            this.Button_Delete_Begin.Location = new System.Drawing.Point(405, 496);
+            this.Button_Delete_Begin.Name = "Button_Delete_Begin";
+            this.Button_Delete_Begin.Size = new System.Drawing.Size(167, 43);
+            this.Button_Delete_Begin.TabIndex = 6;
+            this.Button_Delete_Begin.TabStop = false;
+            this.Button_Delete_Begin.Text = "Begin Operation";
+            this.Button_Delete_Begin.UseVisualStyleBackColor = false;
+            // 
+            // Textbox_Delete_Folder_Path
+            // 
+            this.Textbox_Delete_Folder_Path.Location = new System.Drawing.Point(119, 76);
+            this.Textbox_Delete_Folder_Path.Name = "Textbox_Delete_Folder_Path";
+            this.Textbox_Delete_Folder_Path.Size = new System.Drawing.Size(723, 25);
+            this.Textbox_Delete_Folder_Path.TabIndex = 0;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semilight", 10.75F);
+            this.label14.Location = new System.Drawing.Point(115, 53);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(312, 20);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Select the folder that contains all files to delete";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semilight", 14.75F);
+            this.label13.Location = new System.Drawing.Point(400, 13);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(128, 28);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Secure Delete";
+            // 
+            // Label_Delete_Begin
+            // 
+            this.Label_Delete_Begin.AutoSize = true;
+            this.Label_Delete_Begin.Font = new System.Drawing.Font("Segoe UI Semilight", 7.75F);
+            this.Label_Delete_Begin.Location = new System.Drawing.Point(388, 542);
+            this.Label_Delete_Begin.Name = "Label_Delete_Begin";
+            this.Label_Delete_Begin.Size = new System.Drawing.Size(195, 13);
+            this.Label_Delete_Begin.TabIndex = 7;
+            this.Label_Delete_Begin.Text = "Navigate to the output tab to view status";
+            this.Label_Delete_Begin.Visible = false;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.Label_Delete_Begin);
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.label14);
+            this.tabPage1.Controls.Add(this.Textbox_Delete_Folder_Path);
+            this.tabPage1.Controls.Add(this.Button_Delete_Begin);
+            this.tabPage1.Controls.Add(this.Button_Delete_Folder_Picker);
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(991, 595);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Secure Delete";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.Checkbox_Delete_All);
+            this.panel1.Controls.Add(this.Checkbox_Delete_Metadata);
+            this.panel1.Controls.Add(this.Checkbox_Delete_Encrypt);
+            this.panel1.Controls.Add(this.Checkbox_Delete_Truncate);
+            this.panel1.Controls.Add(this.Checkbox_Delete_Obfuscate);
+            this.panel1.Controls.Add(this.Checkbox_Delete_Overwrite);
+            this.panel1.Location = new System.Drawing.Point(1, 199);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(989, 197);
+            this.panel1.TabIndex = 8;
+            // 
+            // Checkbox_Delete_All
+            // 
+            this.Checkbox_Delete_All.AutoSize = true;
+            this.Checkbox_Delete_All.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Checkbox_Delete_All.Location = new System.Drawing.Point(756, 71);
+            this.Checkbox_Delete_All.Name = "Checkbox_Delete_All";
+            this.Checkbox_Delete_All.Size = new System.Drawing.Size(119, 21);
+            this.Checkbox_Delete_All.TabIndex = 9;
+            this.Checkbox_Delete_All.Text = "All of the above";
+            this.Checkbox_Delete_All.UseVisualStyleBackColor = true;
+            // 
+            // Checkbox_Delete_Metadata
+            // 
+            this.Checkbox_Delete_Metadata.AutoSize = true;
+            this.Checkbox_Delete_Metadata.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Checkbox_Delete_Metadata.Location = new System.Drawing.Point(756, 31);
+            this.Checkbox_Delete_Metadata.Name = "Checkbox_Delete_Metadata";
+            this.Checkbox_Delete_Metadata.Size = new System.Drawing.Size(130, 21);
+            this.Checkbox_Delete_Metadata.TabIndex = 8;
+            this.Checkbox_Delete_Metadata.Text = "Change metadata";
+            this.Checkbox_Delete_Metadata.UseVisualStyleBackColor = true;
+            // 
+            // Checkbox_Delete_Encrypt
+            // 
+            this.Checkbox_Delete_Encrypt.AutoSize = true;
+            this.Checkbox_Delete_Encrypt.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Checkbox_Delete_Encrypt.Location = new System.Drawing.Point(426, 71);
+            this.Checkbox_Delete_Encrypt.Name = "Checkbox_Delete_Encrypt";
+            this.Checkbox_Delete_Encrypt.Size = new System.Drawing.Size(164, 21);
+            this.Checkbox_Delete_Encrypt.TabIndex = 5;
+            this.Checkbox_Delete_Encrypt.Text = "Encrypt before deletion";
+            this.Checkbox_Delete_Encrypt.UseVisualStyleBackColor = true;
+            // 
+            // Checkbox_Delete_Truncate
+            // 
+            this.Checkbox_Delete_Truncate.AutoSize = true;
+            this.Checkbox_Delete_Truncate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Checkbox_Delete_Truncate.Location = new System.Drawing.Point(426, 31);
+            this.Checkbox_Delete_Truncate.Name = "Checkbox_Delete_Truncate";
+            this.Checkbox_Delete_Truncate.Size = new System.Drawing.Size(123, 21);
+            this.Checkbox_Delete_Truncate.TabIndex = 4;
+            this.Checkbox_Delete_Truncate.Text = "Truncate content";
+            this.Checkbox_Delete_Truncate.UseVisualStyleBackColor = true;
+            // 
+            // Checkbox_Delete_Obfuscate
+            // 
+            this.Checkbox_Delete_Obfuscate.AutoSize = true;
+            this.Checkbox_Delete_Obfuscate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Checkbox_Delete_Obfuscate.Location = new System.Drawing.Point(120, 71);
+            this.Checkbox_Delete_Obfuscate.Name = "Checkbox_Delete_Obfuscate";
+            this.Checkbox_Delete_Obfuscate.Size = new System.Drawing.Size(187, 21);
+            this.Checkbox_Delete_Obfuscate.TabIndex = 1;
+            this.Checkbox_Delete_Obfuscate.Text = "Obfuscate before overwrite";
+            this.Checkbox_Delete_Obfuscate.UseVisualStyleBackColor = true;
+            // 
+            // Checkbox_Delete_Overwrite
+            // 
+            this.Checkbox_Delete_Overwrite.AutoSize = true;
+            this.Checkbox_Delete_Overwrite.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Checkbox_Delete_Overwrite.Location = new System.Drawing.Point(120, 31);
+            this.Checkbox_Delete_Overwrite.Name = "Checkbox_Delete_Overwrite";
+            this.Checkbox_Delete_Overwrite.Size = new System.Drawing.Size(130, 21);
+            this.Checkbox_Delete_Overwrite.TabIndex = 0;
+            this.Checkbox_Delete_Overwrite.Text = "Overwrite content";
+            this.Checkbox_Delete_Overwrite.UseVisualStyleBackColor = true;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 650);
-            this.Controls.Add(this.Tab_Panel);
+            this.Controls.Add(this.Page_Delete);
             this.Controls.Add(this.Panel_Title);
             this.Controls.Add(this.Panel_Body);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -595,15 +777,19 @@
             this.Text = "Main Window";
             this.Panel_Title.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Logo)).EndInit();
-            this.Tab_Panel.ResumeLayout(false);
+            this.Page_Delete.ResumeLayout(false);
             this.Page_Configuration.ResumeLayout(false);
             this.Page_Configuration.PerformLayout();
-            this.Tab_Metadata.ResumeLayout(false);
-            this.Tab_Metadata.PerformLayout();
+            this.Page_Metadata.ResumeLayout(false);
+            this.Page_Metadata.PerformLayout();
             this.Panel_Metadata_Checkboxes.ResumeLayout(false);
             this.Panel_Metadata_Checkboxes.PerformLayout();
+            this.Page_Output.ResumeLayout(false);
+            this.Page_Output.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -614,9 +800,9 @@
         private FlatButton Button_Minimise;
         private System.Windows.Forms.PictureBox Picture_Logo;
         private System.Windows.Forms.Panel Panel_Body;
-        private System.Windows.Forms.TabControl Tab_Panel;
+        private System.Windows.Forms.TabControl Page_Delete;
         private System.Windows.Forms.TabPage Page_Configuration;
-        private System.Windows.Forms.TabPage Tab_Metadata;
+        private System.Windows.Forms.TabPage Page_Metadata;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Textbox_Log_Locations;
         private System.Windows.Forms.Label label3;
@@ -625,7 +811,7 @@
         private System.Windows.Forms.RadioButton Radio_Carry_On;
         private System.Windows.Forms.RadioButton Radio_Stop;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage Page_Output;
         private System.Windows.Forms.Label Label_Operation_Start_Time;
         private System.Windows.Forms.TextBox Textbox_Output;
         private System.Windows.Forms.Label Label_Operation;
@@ -651,6 +837,20 @@
         private System.Windows.Forms.TextBox Textbox_Metadata_Output_Location;
         private FlatButton Button_Metadata_Output_Location;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label Label_Delete_Begin;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox Textbox_Delete_Folder_Path;
+        private FlatButton Button_Delete_Begin;
+        private FlatButton Button_Delete_Folder_Picker;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.CheckBox Checkbox_Delete_All;
+        private System.Windows.Forms.CheckBox Checkbox_Delete_Metadata;
+        private System.Windows.Forms.CheckBox Checkbox_Delete_Encrypt;
+        private System.Windows.Forms.CheckBox Checkbox_Delete_Truncate;
+        private System.Windows.Forms.CheckBox Checkbox_Delete_Obfuscate;
+        private System.Windows.Forms.CheckBox Checkbox_Delete_Overwrite;
     }
 }
 
