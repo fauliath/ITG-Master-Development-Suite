@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.Panel_Title = new System.Windows.Forms.Panel();
+            this.Button_Minimise = new Master.FlatButton();
+            this.Button_Close = new Master.FlatButton();
             this.Picture_Logo = new System.Windows.Forms.PictureBox();
             this.Panel_Body = new System.Windows.Forms.Panel();
             this.Tab_Panel = new System.Windows.Forms.TabControl();
@@ -37,12 +39,15 @@
             this.Radio_Carry_On = new System.Windows.Forms.RadioButton();
             this.Radio_Stop = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
+            this.Button_Log_Locations = new Master.FlatButton();
             this.Textbox_Log_Locations = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.Tab_Metadata = new System.Windows.Forms.TabPage();
-            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Textbox_Metadata_Output_Location = new System.Windows.Forms.TextBox();
+            this.Button_Metadata_Output_Location = new Master.FlatButton();
             this.Label_Metadata_View_Output = new System.Windows.Forms.Label();
             this.Panel_Metadata_Checkboxes = new System.Windows.Forms.Panel();
             this.Checkbox_Metadata_All = new System.Windows.Forms.CheckBox();
@@ -58,16 +63,14 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Label_Metadata_Folder = new System.Windows.Forms.Label();
             this.Textbox_Metadata_Folder = new System.Windows.Forms.TextBox();
+            this.Button_Metadata_Begin = new Master.FlatButton();
+            this.Button_Metadata_Folder = new Master.FlatButton();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.Label_Operation_Finished = new System.Windows.Forms.Label();
             this.Label_Operation = new System.Windows.Forms.Label();
             this.Label_Operation_Start_Time = new System.Windows.Forms.Label();
             this.Textbox_Output = new System.Windows.Forms.TextBox();
-            this.Button_Log_Locations = new Master.FlatButton();
-            this.Button_Metadata_Begin = new Master.FlatButton();
-            this.Button_Metadata_Folder = new Master.FlatButton();
-            this.Button_Minimise = new Master.FlatButton();
-            this.Button_Close = new Master.FlatButton();
+            this.label6 = new System.Windows.Forms.Label();
             this.Panel_Title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Logo)).BeginInit();
             this.Tab_Panel.SuspendLayout();
@@ -87,6 +90,38 @@
             this.Panel_Title.Size = new System.Drawing.Size(1005, 30);
             this.Panel_Title.TabIndex = 0;
             this.Panel_Title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Move_Form);
+            // 
+            // Button_Minimise
+            // 
+            this.Button_Minimise.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Button_Minimise.FlatAppearance.BorderSize = 0;
+            this.Button_Minimise.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Minimise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Minimise.ForeColor = System.Drawing.Color.White;
+            this.Button_Minimise.Location = new System.Drawing.Point(944, 3);
+            this.Button_Minimise.Name = "Button_Minimise";
+            this.Button_Minimise.Size = new System.Drawing.Size(26, 27);
+            this.Button_Minimise.TabIndex = 1;
+            this.Button_Minimise.TabStop = false;
+            this.Button_Minimise.Text = "-";
+            this.Button_Minimise.UseVisualStyleBackColor = false;
+            this.Button_Minimise.Click += new System.EventHandler(this.Button_Minimise_Click);
+            // 
+            // Button_Close
+            // 
+            this.Button_Close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Button_Close.FlatAppearance.BorderSize = 0;
+            this.Button_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Close.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Close.ForeColor = System.Drawing.Color.White;
+            this.Button_Close.Location = new System.Drawing.Point(976, 3);
+            this.Button_Close.Name = "Button_Close";
+            this.Button_Close.Size = new System.Drawing.Size(26, 27);
+            this.Button_Close.TabIndex = 0;
+            this.Button_Close.TabStop = false;
+            this.Button_Close.Text = "X";
+            this.Button_Close.UseVisualStyleBackColor = false;
+            this.Button_Close.Click += new System.EventHandler(this.Button_Close_Click);
             // 
             // Picture_Logo
             // 
@@ -173,6 +208,21 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Would you like to stop when an error is encountered, or log it and carry on?";
             // 
+            // Button_Log_Locations
+            // 
+            this.Button_Log_Locations.BackColor = System.Drawing.Color.Silver;
+            this.Button_Log_Locations.Enabled = false;
+            this.Button_Log_Locations.FlatAppearance.BorderSize = 0;
+            this.Button_Log_Locations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Log_Locations.Location = new System.Drawing.Point(830, 212);
+            this.Button_Log_Locations.Name = "Button_Log_Locations";
+            this.Button_Log_Locations.Size = new System.Drawing.Size(35, 25);
+            this.Button_Log_Locations.TabIndex = 5;
+            this.Button_Log_Locations.TabStop = false;
+            this.Button_Log_Locations.Text = "...";
+            this.Button_Log_Locations.UseVisualStyleBackColor = false;
+            this.Button_Log_Locations.Click += new System.EventHandler(this.Button_Log_Locations_Click);
+            // 
             // Textbox_Log_Locations
             // 
             this.Textbox_Log_Locations.Enabled = false;
@@ -215,6 +265,9 @@
             // Tab_Metadata
             // 
             this.Tab_Metadata.Controls.Add(this.label6);
+            this.Tab_Metadata.Controls.Add(this.label8);
+            this.Tab_Metadata.Controls.Add(this.Textbox_Metadata_Output_Location);
+            this.Tab_Metadata.Controls.Add(this.Button_Metadata_Output_Location);
             this.Tab_Metadata.Controls.Add(this.Label_Metadata_View_Output);
             this.Tab_Metadata.Controls.Add(this.Panel_Metadata_Checkboxes);
             this.Tab_Metadata.Controls.Add(this.label5);
@@ -230,22 +283,44 @@
             this.Tab_Metadata.Text = "Metadata";
             this.Tab_Metadata.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // label8
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semilight", 7.75F);
-            this.label6.Location = new System.Drawing.Point(116, 131);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(272, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Your output CSV file will be placed in the above directory.";
-            this.label6.Visible = false;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI Semilight", 10.75F);
+            this.label8.Location = new System.Drawing.Point(115, 157);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(246, 20);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Select the location for the output file";
+            // 
+            // Textbox_Metadata_Output_Location
+            // 
+            this.Textbox_Metadata_Output_Location.Location = new System.Drawing.Point(119, 180);
+            this.Textbox_Metadata_Output_Location.Name = "Textbox_Metadata_Output_Location";
+            this.Textbox_Metadata_Output_Location.Size = new System.Drawing.Size(723, 25);
+            this.Textbox_Metadata_Output_Location.TabIndex = 9;
+            // 
+            // Button_Metadata_Output_Location
+            // 
+            this.Button_Metadata_Output_Location.BackColor = System.Drawing.Color.Silver;
+            this.Button_Metadata_Output_Location.FlatAppearance.BorderSize = 0;
+            this.Button_Metadata_Output_Location.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Metadata_Output_Location.Font = new System.Drawing.Font("Segoe UI Semilight", 12.75F);
+            this.Button_Metadata_Output_Location.ForeColor = System.Drawing.Color.Black;
+            this.Button_Metadata_Output_Location.Location = new System.Drawing.Point(848, 180);
+            this.Button_Metadata_Output_Location.Name = "Button_Metadata_Output_Location";
+            this.Button_Metadata_Output_Location.Size = new System.Drawing.Size(37, 25);
+            this.Button_Metadata_Output_Location.TabIndex = 11;
+            this.Button_Metadata_Output_Location.TabStop = false;
+            this.Button_Metadata_Output_Location.Text = "...";
+            this.Button_Metadata_Output_Location.UseVisualStyleBackColor = false;
+            this.Button_Metadata_Output_Location.Click += new System.EventHandler(this.Button_Metadata_Output_Location_Click);
             // 
             // Label_Metadata_View_Output
             // 
             this.Label_Metadata_View_Output.AutoSize = true;
             this.Label_Metadata_View_Output.Font = new System.Drawing.Font("Segoe UI Semilight", 7.75F);
-            this.Label_Metadata_View_Output.Location = new System.Drawing.Point(388, 447);
+            this.Label_Metadata_View_Output.Location = new System.Drawing.Point(388, 542);
             this.Label_Metadata_View_Output.Name = "Label_Metadata_View_Output";
             this.Label_Metadata_View_Output.Size = new System.Drawing.Size(195, 13);
             this.Label_Metadata_View_Output.TabIndex = 7;
@@ -265,9 +340,9 @@
             this.Panel_Metadata_Checkboxes.Controls.Add(this.Checkbox_Metadata_Extension);
             this.Panel_Metadata_Checkboxes.Controls.Add(this.Checkbox_Metadata_Path);
             this.Panel_Metadata_Checkboxes.Controls.Add(this.Checkbox_Metadata_Filename);
-            this.Panel_Metadata_Checkboxes.Location = new System.Drawing.Point(-1, 175);
+            this.Panel_Metadata_Checkboxes.Location = new System.Drawing.Point(2, 250);
             this.Panel_Metadata_Checkboxes.Name = "Panel_Metadata_Checkboxes";
-            this.Panel_Metadata_Checkboxes.Size = new System.Drawing.Size(993, 197);
+            this.Panel_Metadata_Checkboxes.Size = new System.Drawing.Size(989, 197);
             this.Panel_Metadata_Checkboxes.TabIndex = 5;
             // 
             // Checkbox_Metadata_All
@@ -395,7 +470,7 @@
             // 
             this.Label_Metadata_Folder.AutoSize = true;
             this.Label_Metadata_Folder.Font = new System.Drawing.Font("Segoe UI Semilight", 10.75F);
-            this.Label_Metadata_Folder.Location = new System.Drawing.Point(115, 80);
+            this.Label_Metadata_Folder.Location = new System.Drawing.Point(115, 53);
             this.Label_Metadata_Folder.Name = "Label_Metadata_Folder";
             this.Label_Metadata_Folder.Size = new System.Drawing.Size(115, 20);
             this.Label_Metadata_Folder.TabIndex = 1;
@@ -403,10 +478,42 @@
             // 
             // Textbox_Metadata_Folder
             // 
-            this.Textbox_Metadata_Folder.Location = new System.Drawing.Point(119, 103);
+            this.Textbox_Metadata_Folder.Location = new System.Drawing.Point(119, 76);
             this.Textbox_Metadata_Folder.Name = "Textbox_Metadata_Folder";
             this.Textbox_Metadata_Folder.Size = new System.Drawing.Size(723, 25);
             this.Textbox_Metadata_Folder.TabIndex = 0;
+            // 
+            // Button_Metadata_Begin
+            // 
+            this.Button_Metadata_Begin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Button_Metadata_Begin.FlatAppearance.BorderSize = 0;
+            this.Button_Metadata_Begin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Metadata_Begin.Font = new System.Drawing.Font("Segoe UI Semilight", 13.75F);
+            this.Button_Metadata_Begin.ForeColor = System.Drawing.Color.White;
+            this.Button_Metadata_Begin.Location = new System.Drawing.Point(405, 496);
+            this.Button_Metadata_Begin.Name = "Button_Metadata_Begin";
+            this.Button_Metadata_Begin.Size = new System.Drawing.Size(167, 43);
+            this.Button_Metadata_Begin.TabIndex = 6;
+            this.Button_Metadata_Begin.TabStop = false;
+            this.Button_Metadata_Begin.Text = "Begin Operation";
+            this.Button_Metadata_Begin.UseVisualStyleBackColor = false;
+            this.Button_Metadata_Begin.Click += new System.EventHandler(this.Button_Metadata_Begin_Click);
+            // 
+            // Button_Metadata_Folder
+            // 
+            this.Button_Metadata_Folder.BackColor = System.Drawing.Color.Silver;
+            this.Button_Metadata_Folder.FlatAppearance.BorderSize = 0;
+            this.Button_Metadata_Folder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Metadata_Folder.Font = new System.Drawing.Font("Segoe UI Semilight", 12.75F);
+            this.Button_Metadata_Folder.ForeColor = System.Drawing.Color.Black;
+            this.Button_Metadata_Folder.Location = new System.Drawing.Point(848, 76);
+            this.Button_Metadata_Folder.Name = "Button_Metadata_Folder";
+            this.Button_Metadata_Folder.Size = new System.Drawing.Size(37, 25);
+            this.Button_Metadata_Folder.TabIndex = 2;
+            this.Button_Metadata_Folder.TabStop = false;
+            this.Button_Metadata_Folder.Text = "...";
+            this.Button_Metadata_Folder.UseVisualStyleBackColor = false;
+            this.Button_Metadata_Folder.Click += new System.EventHandler(this.Button_Metadata_Folder_Click);
             // 
             // tabPage1
             // 
@@ -463,84 +570,16 @@
             this.Textbox_Output.Size = new System.Drawing.Size(926, 466);
             this.Textbox_Output.TabIndex = 0;
             // 
-            // Button_Log_Locations
+            // label6
             // 
-            this.Button_Log_Locations.BackColor = System.Drawing.Color.Silver;
-            this.Button_Log_Locations.Enabled = false;
-            this.Button_Log_Locations.FlatAppearance.BorderSize = 0;
-            this.Button_Log_Locations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Log_Locations.Location = new System.Drawing.Point(830, 212);
-            this.Button_Log_Locations.Name = "Button_Log_Locations";
-            this.Button_Log_Locations.Size = new System.Drawing.Size(35, 25);
-            this.Button_Log_Locations.TabIndex = 5;
-            this.Button_Log_Locations.TabStop = false;
-            this.Button_Log_Locations.Text = "...";
-            this.Button_Log_Locations.UseVisualStyleBackColor = false;
-            this.Button_Log_Locations.Click += new System.EventHandler(this.Button_Log_Locations_Click);
-            // 
-            // Button_Metadata_Begin
-            // 
-            this.Button_Metadata_Begin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Button_Metadata_Begin.FlatAppearance.BorderSize = 0;
-            this.Button_Metadata_Begin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Metadata_Begin.Font = new System.Drawing.Font("Segoe UI Semilight", 13.75F);
-            this.Button_Metadata_Begin.ForeColor = System.Drawing.Color.White;
-            this.Button_Metadata_Begin.Location = new System.Drawing.Point(405, 401);
-            this.Button_Metadata_Begin.Name = "Button_Metadata_Begin";
-            this.Button_Metadata_Begin.Size = new System.Drawing.Size(167, 43);
-            this.Button_Metadata_Begin.TabIndex = 6;
-            this.Button_Metadata_Begin.TabStop = false;
-            this.Button_Metadata_Begin.Text = "Begin Operation";
-            this.Button_Metadata_Begin.UseVisualStyleBackColor = false;
-            this.Button_Metadata_Begin.Click += new System.EventHandler(this.Button_Metadata_Begin_Click);
-            // 
-            // Button_Metadata_Folder
-            // 
-            this.Button_Metadata_Folder.BackColor = System.Drawing.Color.Silver;
-            this.Button_Metadata_Folder.FlatAppearance.BorderSize = 0;
-            this.Button_Metadata_Folder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Metadata_Folder.Font = new System.Drawing.Font("Segoe UI Semilight", 12.75F);
-            this.Button_Metadata_Folder.ForeColor = System.Drawing.Color.Black;
-            this.Button_Metadata_Folder.Location = new System.Drawing.Point(848, 103);
-            this.Button_Metadata_Folder.Name = "Button_Metadata_Folder";
-            this.Button_Metadata_Folder.Size = new System.Drawing.Size(37, 25);
-            this.Button_Metadata_Folder.TabIndex = 2;
-            this.Button_Metadata_Folder.TabStop = false;
-            this.Button_Metadata_Folder.Text = "...";
-            this.Button_Metadata_Folder.UseVisualStyleBackColor = false;
-            this.Button_Metadata_Folder.Click += new System.EventHandler(this.Button_Metadata_Folder_Click);
-            // 
-            // Button_Minimise
-            // 
-            this.Button_Minimise.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Button_Minimise.FlatAppearance.BorderSize = 0;
-            this.Button_Minimise.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Minimise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Minimise.ForeColor = System.Drawing.Color.White;
-            this.Button_Minimise.Location = new System.Drawing.Point(944, 3);
-            this.Button_Minimise.Name = "Button_Minimise";
-            this.Button_Minimise.Size = new System.Drawing.Size(26, 27);
-            this.Button_Minimise.TabIndex = 1;
-            this.Button_Minimise.TabStop = false;
-            this.Button_Minimise.Text = "-";
-            this.Button_Minimise.UseVisualStyleBackColor = false;
-            this.Button_Minimise.Click += new System.EventHandler(this.Button_Minimise_Click);
-            // 
-            // Button_Close
-            // 
-            this.Button_Close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Button_Close.FlatAppearance.BorderSize = 0;
-            this.Button_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Close.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Close.ForeColor = System.Drawing.Color.White;
-            this.Button_Close.Location = new System.Drawing.Point(976, 3);
-            this.Button_Close.Name = "Button_Close";
-            this.Button_Close.Size = new System.Drawing.Size(26, 27);
-            this.Button_Close.TabIndex = 0;
-            this.Button_Close.TabStop = false;
-            this.Button_Close.Text = "X";
-            this.Button_Close.UseVisualStyleBackColor = false;
-            this.Button_Close.Click += new System.EventHandler(this.Button_Close_Click);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semilight", 7.75F);
+            this.label6.Location = new System.Drawing.Point(119, 208);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(254, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "You can dynamically create the file path in this output";
+            this.label6.Visible = false;
             // 
             // MainWindow
             // 
@@ -607,8 +646,11 @@
         private FlatButton Button_Metadata_Begin;
         private System.Windows.Forms.CheckBox Checkbox_Metadata_All;
         private System.Windows.Forms.Label Label_Metadata_View_Output;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label Label_Operation_Finished;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox Textbox_Metadata_Output_Location;
+        private FlatButton Button_Metadata_Output_Location;
+        private System.Windows.Forms.Label label6;
     }
 }
 

@@ -46,6 +46,10 @@ namespace Master
 
         private void Button_Metadata_Begin_Click(object sender, EventArgs e) { Metadata_StartBackgroundWorker(); }
 
+        private void Button_Metadata_Output_Location_Click(object sender, EventArgs e) { Metadata_Set_Output_File(); }
+
         #endregion
+
+
     }
 }

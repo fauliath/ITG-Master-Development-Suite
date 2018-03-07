@@ -52,10 +52,17 @@ namespace Master
         public void Metadata_StartBackgroundWorker()
         {
             metadata_folder = Textbox_Metadata_Folder.Text;
+            metadata_csv_filename = Textbox_Metadata_Output_Location.Text;
 
             if (string.IsNullOrWhiteSpace(metadata_folder) || path_handling.PathIsNotValid(metadata_folder))
             {
                 MessageBox.Show("You must select a folder in order to run this process.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(metadata_csv_filename))
+            {
+                MessageBox.Show("You must enter an output path to put the CSV file in.");
                 return;
             }
 
@@ -78,7 +85,7 @@ namespace Master
 
         private void Metadata_DoWork(object sender, DoWorkEventArgs e)
         {
-            metadata_csv_filename = metadata_folder + "\\" + "Metadata Extractor Results.csv";
+            metadata_csv_filename = Textbox_Metadata_Output_Location.Text;
 
             // must be specifically told to use Delimon since this allows long filenames, and System.IO doesn't.
             string[] files = (Delimon.Win32.IO.Directory.GetFiles(metadata_folder, "*", Delimon.Win32.IO.SearchOption.AllDirectories));
@@ -221,6 +228,21 @@ namespace Master
 
         private void Metadata_WriteHeadersToFile()
         {
+            if (!Delimon.Win32.IO.File.Exists(metadata_csv_filename))
+            {
+                try
+                {
+                    Delimon.Win32.IO.Directory.CreateDirectory(Delimon.Win32.IO.Path.GetDirectoryName(metadata_csv_filename));
+                    
+                    
+                    var file = Delimon.Win32.IO.File.Create(metadata_csv_filename);
+                    file.Close();            
+                } catch (Exception ex)
+                {
+                    PrintToOutput(ex.Message);
+                }
+            }
+
             using (StreamWriter stream = new StreamWriter(metadata_csv_filename, false))
             {
                 if (Checkbox_Metadata_Filename.Checked)
@@ -264,6 +286,14 @@ namespace Master
             Button_Metadata_Folder.Enabled = true;
             Label_Operation_Finished.Visible = true;
             Label_Operation_Finished.Text = "Operation finished at: " + DateTime.Now;
+        }
+
+        public void Metadata_Set_Output_File()
+        {
+            metadata_csv_filename = path_handling.OpenFolderLocation() + "\\" + metadata_csv_filename;
+
+            Textbox_Metadata_Output_Location.Text = metadata_csv_filename;
+            Textbox_Metadata_Output_Location.SelectionStart = Textbox_Metadata_Output_Location.Text.Length;
         }
     }
 }
