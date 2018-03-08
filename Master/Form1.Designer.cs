@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.Panel_Title = new System.Windows.Forms.Panel();
-            this.Button_Minimise = new Master.FlatButton();
-            this.Button_Close = new Master.FlatButton();
             this.Picture_Logo = new System.Windows.Forms.PictureBox();
             this.Panel_Body = new System.Windows.Forms.Panel();
             this.Page_Delete = new System.Windows.Forms.TabControl();
@@ -39,7 +37,6 @@
             this.Radio_Carry_On = new System.Windows.Forms.RadioButton();
             this.Radio_Stop = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.Button_Log_Locations = new Master.FlatButton();
             this.Textbox_Log_Locations = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,7 +45,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.Textbox_Metadata_Output_Location = new System.Windows.Forms.TextBox();
-            this.Button_Metadata_Output_Location = new Master.FlatButton();
             this.Label_Metadata_View_Output = new System.Windows.Forms.Label();
             this.Panel_Metadata_Checkboxes = new System.Windows.Forms.Panel();
             this.Checkbox_Metadata_All = new System.Windows.Forms.CheckBox();
@@ -64,36 +60,40 @@
             this.label5 = new System.Windows.Forms.Label();
             this.Label_Metadata_Folder = new System.Windows.Forms.Label();
             this.Textbox_Metadata_Folder = new System.Windows.Forms.TextBox();
-            this.Button_Metadata_Begin = new Master.FlatButton();
-            this.Button_Metadata_Folder = new Master.FlatButton();
-            this.Page_Output = new System.Windows.Forms.TabPage();
-            this.Label_Operation_Finished = new System.Windows.Forms.Label();
-            this.Label_Operation = new System.Windows.Forms.Label();
-            this.Label_Operation_Start_Time = new System.Windows.Forms.Label();
-            this.Textbox_Output = new System.Windows.Forms.TextBox();
-            this.Button_Delete_Folder_Picker = new Master.FlatButton();
-            this.Button_Delete_Begin = new Master.FlatButton();
-            this.Textbox_Delete_Folder_Path = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.Label_Delete_Begin = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.Panel_Delete_Checkboxes = new System.Windows.Forms.Panel();
             this.Checkbox_Delete_All = new System.Windows.Forms.CheckBox();
             this.Checkbox_Delete_Metadata = new System.Windows.Forms.CheckBox();
             this.Checkbox_Delete_Encrypt = new System.Windows.Forms.CheckBox();
             this.Checkbox_Delete_Truncate = new System.Windows.Forms.CheckBox();
             this.Checkbox_Delete_Obfuscate = new System.Windows.Forms.CheckBox();
             this.Checkbox_Delete_Overwrite = new System.Windows.Forms.CheckBox();
+            this.Label_Delete_View_Output = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Textbox_Delete_Folder_Path = new System.Windows.Forms.TextBox();
+            this.Page_Output = new System.Windows.Forms.TabPage();
+            this.Label_Operation_Finished = new System.Windows.Forms.Label();
+            this.Label_Operation = new System.Windows.Forms.Label();
+            this.Label_Operation_Start_Time = new System.Windows.Forms.Label();
+            this.Textbox_Output = new System.Windows.Forms.TextBox();
+            this.Button_Log_Locations = new Master.FlatButton();
+            this.Button_Metadata_Output_Location = new Master.FlatButton();
+            this.Button_Metadata_Begin = new Master.FlatButton();
+            this.Button_Metadata_Folder = new Master.FlatButton();
+            this.Button_Delete_Begin = new Master.FlatButton();
+            this.Button_Delete_Folder_Picker = new Master.FlatButton();
+            this.Button_Minimise = new Master.FlatButton();
+            this.Button_Close = new Master.FlatButton();
             this.Panel_Title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Picture_Logo)).BeginInit();
             this.Page_Delete.SuspendLayout();
             this.Page_Configuration.SuspendLayout();
             this.Page_Metadata.SuspendLayout();
             this.Panel_Metadata_Checkboxes.SuspendLayout();
-            this.Page_Output.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.Panel_Delete_Checkboxes.SuspendLayout();
+            this.Page_Output.SuspendLayout();
             this.SuspendLayout();
             // 
             // Panel_Title
@@ -106,38 +106,6 @@
             this.Panel_Title.Size = new System.Drawing.Size(1005, 30);
             this.Panel_Title.TabIndex = 0;
             this.Panel_Title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Move_Form);
-            // 
-            // Button_Minimise
-            // 
-            this.Button_Minimise.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Button_Minimise.FlatAppearance.BorderSize = 0;
-            this.Button_Minimise.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Minimise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Minimise.ForeColor = System.Drawing.Color.White;
-            this.Button_Minimise.Location = new System.Drawing.Point(944, 3);
-            this.Button_Minimise.Name = "Button_Minimise";
-            this.Button_Minimise.Size = new System.Drawing.Size(26, 27);
-            this.Button_Minimise.TabIndex = 1;
-            this.Button_Minimise.TabStop = false;
-            this.Button_Minimise.Text = "-";
-            this.Button_Minimise.UseVisualStyleBackColor = false;
-            this.Button_Minimise.Click += new System.EventHandler(this.Button_Minimise_Click);
-            // 
-            // Button_Close
-            // 
-            this.Button_Close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.Button_Close.FlatAppearance.BorderSize = 0;
-            this.Button_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Close.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Button_Close.ForeColor = System.Drawing.Color.White;
-            this.Button_Close.Location = new System.Drawing.Point(976, 3);
-            this.Button_Close.Name = "Button_Close";
-            this.Button_Close.Size = new System.Drawing.Size(26, 27);
-            this.Button_Close.TabIndex = 0;
-            this.Button_Close.TabStop = false;
-            this.Button_Close.Text = "X";
-            this.Button_Close.UseVisualStyleBackColor = false;
-            this.Button_Close.Click += new System.EventHandler(this.Button_Close_Click);
             // 
             // Picture_Logo
             // 
@@ -225,21 +193,6 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Would you like to stop when an error is encountered, or log it and carry on?";
             // 
-            // Button_Log_Locations
-            // 
-            this.Button_Log_Locations.BackColor = System.Drawing.Color.Silver;
-            this.Button_Log_Locations.Enabled = false;
-            this.Button_Log_Locations.FlatAppearance.BorderSize = 0;
-            this.Button_Log_Locations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Log_Locations.Location = new System.Drawing.Point(830, 212);
-            this.Button_Log_Locations.Name = "Button_Log_Locations";
-            this.Button_Log_Locations.Size = new System.Drawing.Size(35, 25);
-            this.Button_Log_Locations.TabIndex = 5;
-            this.Button_Log_Locations.TabStop = false;
-            this.Button_Log_Locations.Text = "...";
-            this.Button_Log_Locations.UseVisualStyleBackColor = false;
-            this.Button_Log_Locations.Click += new System.EventHandler(this.Button_Log_Locations_Click);
-            // 
             // Textbox_Log_Locations
             // 
             this.Textbox_Log_Locations.Enabled = false;
@@ -284,12 +237,12 @@
             this.Page_Metadata.Controls.Add(this.label6);
             this.Page_Metadata.Controls.Add(this.label8);
             this.Page_Metadata.Controls.Add(this.Textbox_Metadata_Output_Location);
-            this.Page_Metadata.Controls.Add(this.Button_Metadata_Output_Location);
             this.Page_Metadata.Controls.Add(this.Label_Metadata_View_Output);
             this.Page_Metadata.Controls.Add(this.Panel_Metadata_Checkboxes);
             this.Page_Metadata.Controls.Add(this.label5);
             this.Page_Metadata.Controls.Add(this.Label_Metadata_Folder);
             this.Page_Metadata.Controls.Add(this.Textbox_Metadata_Folder);
+            this.Page_Metadata.Controls.Add(this.Button_Metadata_Output_Location);
             this.Page_Metadata.Controls.Add(this.Button_Metadata_Begin);
             this.Page_Metadata.Controls.Add(this.Button_Metadata_Folder);
             this.Page_Metadata.Location = new System.Drawing.Point(4, 26);
@@ -327,22 +280,6 @@
             this.Textbox_Metadata_Output_Location.Name = "Textbox_Metadata_Output_Location";
             this.Textbox_Metadata_Output_Location.Size = new System.Drawing.Size(723, 25);
             this.Textbox_Metadata_Output_Location.TabIndex = 9;
-            // 
-            // Button_Metadata_Output_Location
-            // 
-            this.Button_Metadata_Output_Location.BackColor = System.Drawing.Color.Silver;
-            this.Button_Metadata_Output_Location.FlatAppearance.BorderSize = 0;
-            this.Button_Metadata_Output_Location.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Metadata_Output_Location.Font = new System.Drawing.Font("Segoe UI Semilight", 12.75F);
-            this.Button_Metadata_Output_Location.ForeColor = System.Drawing.Color.Black;
-            this.Button_Metadata_Output_Location.Location = new System.Drawing.Point(848, 180);
-            this.Button_Metadata_Output_Location.Name = "Button_Metadata_Output_Location";
-            this.Button_Metadata_Output_Location.Size = new System.Drawing.Size(37, 25);
-            this.Button_Metadata_Output_Location.TabIndex = 11;
-            this.Button_Metadata_Output_Location.TabStop = false;
-            this.Button_Metadata_Output_Location.Text = "...";
-            this.Button_Metadata_Output_Location.UseVisualStyleBackColor = false;
-            this.Button_Metadata_Output_Location.Click += new System.EventHandler(this.Button_Metadata_Output_Location_Click);
             // 
             // Label_Metadata_View_Output
             // 
@@ -511,165 +448,10 @@
             this.Textbox_Metadata_Folder.Size = new System.Drawing.Size(723, 25);
             this.Textbox_Metadata_Folder.TabIndex = 0;
             // 
-            // Button_Metadata_Begin
-            // 
-            this.Button_Metadata_Begin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Button_Metadata_Begin.FlatAppearance.BorderSize = 0;
-            this.Button_Metadata_Begin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Metadata_Begin.Font = new System.Drawing.Font("Segoe UI Semilight", 13.75F);
-            this.Button_Metadata_Begin.ForeColor = System.Drawing.Color.White;
-            this.Button_Metadata_Begin.Location = new System.Drawing.Point(405, 496);
-            this.Button_Metadata_Begin.Name = "Button_Metadata_Begin";
-            this.Button_Metadata_Begin.Size = new System.Drawing.Size(167, 43);
-            this.Button_Metadata_Begin.TabIndex = 6;
-            this.Button_Metadata_Begin.TabStop = false;
-            this.Button_Metadata_Begin.Text = "Begin Operation";
-            this.Button_Metadata_Begin.UseVisualStyleBackColor = false;
-            this.Button_Metadata_Begin.Click += new System.EventHandler(this.Button_Metadata_Begin_Click);
-            // 
-            // Button_Metadata_Folder
-            // 
-            this.Button_Metadata_Folder.BackColor = System.Drawing.Color.Silver;
-            this.Button_Metadata_Folder.FlatAppearance.BorderSize = 0;
-            this.Button_Metadata_Folder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Metadata_Folder.Font = new System.Drawing.Font("Segoe UI Semilight", 12.75F);
-            this.Button_Metadata_Folder.ForeColor = System.Drawing.Color.Black;
-            this.Button_Metadata_Folder.Location = new System.Drawing.Point(848, 76);
-            this.Button_Metadata_Folder.Name = "Button_Metadata_Folder";
-            this.Button_Metadata_Folder.Size = new System.Drawing.Size(37, 25);
-            this.Button_Metadata_Folder.TabIndex = 2;
-            this.Button_Metadata_Folder.TabStop = false;
-            this.Button_Metadata_Folder.Text = "...";
-            this.Button_Metadata_Folder.UseVisualStyleBackColor = false;
-            this.Button_Metadata_Folder.Click += new System.EventHandler(this.Button_Metadata_Folder_Click);
-            // 
-            // Page_Output
-            // 
-            this.Page_Output.Controls.Add(this.Label_Operation_Finished);
-            this.Page_Output.Controls.Add(this.Label_Operation);
-            this.Page_Output.Controls.Add(this.Label_Operation_Start_Time);
-            this.Page_Output.Controls.Add(this.Textbox_Output);
-            this.Page_Output.Location = new System.Drawing.Point(4, 26);
-            this.Page_Output.Name = "Page_Output";
-            this.Page_Output.Padding = new System.Windows.Forms.Padding(3);
-            this.Page_Output.Size = new System.Drawing.Size(991, 595);
-            this.Page_Output.TabIndex = 2;
-            this.Page_Output.Text = "Output";
-            this.Page_Output.UseVisualStyleBackColor = true;
-            // 
-            // Label_Operation_Finished
-            // 
-            this.Label_Operation_Finished.AutoSize = true;
-            this.Label_Operation_Finished.Font = new System.Drawing.Font("Segoe UI Semilight", 10.75F);
-            this.Label_Operation_Finished.Location = new System.Drawing.Point(550, 62);
-            this.Label_Operation_Finished.Name = "Label_Operation_Finished";
-            this.Label_Operation_Finished.Size = new System.Drawing.Size(148, 20);
-            this.Label_Operation_Finished.TabIndex = 3;
-            this.Label_Operation_Finished.Text = "Operation finished at:";
-            this.Label_Operation_Finished.Visible = false;
-            // 
-            // Label_Operation
-            // 
-            this.Label_Operation.AutoSize = true;
-            this.Label_Operation.Font = new System.Drawing.Font("Segoe UI Semilight", 10.75F);
-            this.Label_Operation.Location = new System.Drawing.Point(30, 19);
-            this.Label_Operation.Name = "Label_Operation";
-            this.Label_Operation.Size = new System.Drawing.Size(78, 20);
-            this.Label_Operation.TabIndex = 2;
-            this.Label_Operation.Text = "Operation:";
-            // 
-            // Label_Operation_Start_Time
-            // 
-            this.Label_Operation_Start_Time.AutoSize = true;
-            this.Label_Operation_Start_Time.Font = new System.Drawing.Font("Segoe UI Semilight", 10.75F);
-            this.Label_Operation_Start_Time.Location = new System.Drawing.Point(30, 62);
-            this.Label_Operation_Start_Time.Name = "Label_Operation_Start_Time";
-            this.Label_Operation_Start_Time.Size = new System.Drawing.Size(145, 20);
-            this.Label_Operation_Start_Time.TabIndex = 1;
-            this.Label_Operation_Start_Time.Text = "Operation started at:";
-            // 
-            // Textbox_Output
-            // 
-            this.Textbox_Output.Location = new System.Drawing.Point(34, 98);
-            this.Textbox_Output.Multiline = true;
-            this.Textbox_Output.Name = "Textbox_Output";
-            this.Textbox_Output.ReadOnly = true;
-            this.Textbox_Output.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Textbox_Output.Size = new System.Drawing.Size(926, 466);
-            this.Textbox_Output.TabIndex = 0;
-            // 
-            // Button_Delete_Folder_Picker
-            // 
-            this.Button_Delete_Folder_Picker.BackColor = System.Drawing.Color.Silver;
-            this.Button_Delete_Folder_Picker.FlatAppearance.BorderSize = 0;
-            this.Button_Delete_Folder_Picker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Delete_Folder_Picker.Font = new System.Drawing.Font("Segoe UI Semilight", 12.75F);
-            this.Button_Delete_Folder_Picker.ForeColor = System.Drawing.Color.Black;
-            this.Button_Delete_Folder_Picker.Location = new System.Drawing.Point(848, 76);
-            this.Button_Delete_Folder_Picker.Name = "Button_Delete_Folder_Picker";
-            this.Button_Delete_Folder_Picker.Size = new System.Drawing.Size(37, 25);
-            this.Button_Delete_Folder_Picker.TabIndex = 2;
-            this.Button_Delete_Folder_Picker.TabStop = false;
-            this.Button_Delete_Folder_Picker.Text = "...";
-            this.Button_Delete_Folder_Picker.UseVisualStyleBackColor = false;
-            // 
-            // Button_Delete_Begin
-            // 
-            this.Button_Delete_Begin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.Button_Delete_Begin.FlatAppearance.BorderSize = 0;
-            this.Button_Delete_Begin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Button_Delete_Begin.Font = new System.Drawing.Font("Segoe UI Semilight", 13.75F);
-            this.Button_Delete_Begin.ForeColor = System.Drawing.Color.White;
-            this.Button_Delete_Begin.Location = new System.Drawing.Point(405, 496);
-            this.Button_Delete_Begin.Name = "Button_Delete_Begin";
-            this.Button_Delete_Begin.Size = new System.Drawing.Size(167, 43);
-            this.Button_Delete_Begin.TabIndex = 6;
-            this.Button_Delete_Begin.TabStop = false;
-            this.Button_Delete_Begin.Text = "Begin Operation";
-            this.Button_Delete_Begin.UseVisualStyleBackColor = false;
-            // 
-            // Textbox_Delete_Folder_Path
-            // 
-            this.Textbox_Delete_Folder_Path.Location = new System.Drawing.Point(119, 76);
-            this.Textbox_Delete_Folder_Path.Name = "Textbox_Delete_Folder_Path";
-            this.Textbox_Delete_Folder_Path.Size = new System.Drawing.Size(723, 25);
-            this.Textbox_Delete_Folder_Path.TabIndex = 0;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI Semilight", 10.75F);
-            this.label14.Location = new System.Drawing.Point(115, 53);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(312, 20);
-            this.label14.TabIndex = 1;
-            this.label14.Text = "Select the folder that contains all files to delete";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI Semilight", 14.75F);
-            this.label13.Location = new System.Drawing.Point(400, 13);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(128, 28);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "Secure Delete";
-            // 
-            // Label_Delete_Begin
-            // 
-            this.Label_Delete_Begin.AutoSize = true;
-            this.Label_Delete_Begin.Font = new System.Drawing.Font("Segoe UI Semilight", 7.75F);
-            this.Label_Delete_Begin.Location = new System.Drawing.Point(388, 542);
-            this.Label_Delete_Begin.Name = "Label_Delete_Begin";
-            this.Label_Delete_Begin.Size = new System.Drawing.Size(195, 13);
-            this.Label_Delete_Begin.TabIndex = 7;
-            this.Label_Delete_Begin.Text = "Navigate to the output tab to view status";
-            this.Label_Delete_Begin.Visible = false;
-            // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.Label_Delete_Begin);
+            this.tabPage1.Controls.Add(this.Panel_Delete_Checkboxes);
+            this.tabPage1.Controls.Add(this.Label_Delete_View_Output);
             this.tabPage1.Controls.Add(this.label13);
             this.tabPage1.Controls.Add(this.label14);
             this.tabPage1.Controls.Add(this.Textbox_Delete_Folder_Path);
@@ -683,19 +465,19 @@
             this.tabPage1.Text = "Secure Delete";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // Panel_Delete_Checkboxes
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.Controls.Add(this.Checkbox_Delete_All);
-            this.panel1.Controls.Add(this.Checkbox_Delete_Metadata);
-            this.panel1.Controls.Add(this.Checkbox_Delete_Encrypt);
-            this.panel1.Controls.Add(this.Checkbox_Delete_Truncate);
-            this.panel1.Controls.Add(this.Checkbox_Delete_Obfuscate);
-            this.panel1.Controls.Add(this.Checkbox_Delete_Overwrite);
-            this.panel1.Location = new System.Drawing.Point(1, 199);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(989, 197);
-            this.panel1.TabIndex = 8;
+            this.Panel_Delete_Checkboxes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Panel_Delete_Checkboxes.Controls.Add(this.Checkbox_Delete_All);
+            this.Panel_Delete_Checkboxes.Controls.Add(this.Checkbox_Delete_Metadata);
+            this.Panel_Delete_Checkboxes.Controls.Add(this.Checkbox_Delete_Encrypt);
+            this.Panel_Delete_Checkboxes.Controls.Add(this.Checkbox_Delete_Truncate);
+            this.Panel_Delete_Checkboxes.Controls.Add(this.Checkbox_Delete_Obfuscate);
+            this.Panel_Delete_Checkboxes.Controls.Add(this.Checkbox_Delete_Overwrite);
+            this.Panel_Delete_Checkboxes.Location = new System.Drawing.Point(1, 199);
+            this.Panel_Delete_Checkboxes.Name = "Panel_Delete_Checkboxes";
+            this.Panel_Delete_Checkboxes.Size = new System.Drawing.Size(989, 197);
+            this.Panel_Delete_Checkboxes.TabIndex = 8;
             // 
             // Checkbox_Delete_All
             // 
@@ -707,6 +489,7 @@
             this.Checkbox_Delete_All.TabIndex = 9;
             this.Checkbox_Delete_All.Text = "All of the above";
             this.Checkbox_Delete_All.UseVisualStyleBackColor = true;
+            this.Checkbox_Delete_All.CheckedChanged += new System.EventHandler(this.Delete_Select_All_Checkboxes);
             // 
             // Checkbox_Delete_Metadata
             // 
@@ -763,6 +546,226 @@
             this.Checkbox_Delete_Overwrite.Text = "Overwrite content";
             this.Checkbox_Delete_Overwrite.UseVisualStyleBackColor = true;
             // 
+            // Label_Delete_View_Output
+            // 
+            this.Label_Delete_View_Output.AutoSize = true;
+            this.Label_Delete_View_Output.Font = new System.Drawing.Font("Segoe UI Semilight", 7.75F);
+            this.Label_Delete_View_Output.Location = new System.Drawing.Point(388, 542);
+            this.Label_Delete_View_Output.Name = "Label_Delete_View_Output";
+            this.Label_Delete_View_Output.Size = new System.Drawing.Size(195, 13);
+            this.Label_Delete_View_Output.TabIndex = 7;
+            this.Label_Delete_View_Output.Text = "Navigate to the output tab to view status";
+            this.Label_Delete_View_Output.Visible = false;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI Semilight", 14.75F);
+            this.label13.Location = new System.Drawing.Point(400, 13);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(128, 28);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "Secure Delete";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI Semilight", 10.75F);
+            this.label14.Location = new System.Drawing.Point(115, 53);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(312, 20);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "Select the folder that contains all files to delete";
+            // 
+            // Textbox_Delete_Folder_Path
+            // 
+            this.Textbox_Delete_Folder_Path.Location = new System.Drawing.Point(119, 76);
+            this.Textbox_Delete_Folder_Path.Name = "Textbox_Delete_Folder_Path";
+            this.Textbox_Delete_Folder_Path.Size = new System.Drawing.Size(723, 25);
+            this.Textbox_Delete_Folder_Path.TabIndex = 0;
+            // 
+            // Page_Output
+            // 
+            this.Page_Output.Controls.Add(this.Label_Operation_Finished);
+            this.Page_Output.Controls.Add(this.Label_Operation);
+            this.Page_Output.Controls.Add(this.Label_Operation_Start_Time);
+            this.Page_Output.Controls.Add(this.Textbox_Output);
+            this.Page_Output.Location = new System.Drawing.Point(4, 26);
+            this.Page_Output.Name = "Page_Output";
+            this.Page_Output.Padding = new System.Windows.Forms.Padding(3);
+            this.Page_Output.Size = new System.Drawing.Size(991, 595);
+            this.Page_Output.TabIndex = 2;
+            this.Page_Output.Text = "Output";
+            this.Page_Output.UseVisualStyleBackColor = true;
+            // 
+            // Label_Operation_Finished
+            // 
+            this.Label_Operation_Finished.AutoSize = true;
+            this.Label_Operation_Finished.Font = new System.Drawing.Font("Segoe UI Semilight", 10.75F);
+            this.Label_Operation_Finished.Location = new System.Drawing.Point(550, 62);
+            this.Label_Operation_Finished.Name = "Label_Operation_Finished";
+            this.Label_Operation_Finished.Size = new System.Drawing.Size(148, 20);
+            this.Label_Operation_Finished.TabIndex = 3;
+            this.Label_Operation_Finished.Text = "Operation finished at:";
+            this.Label_Operation_Finished.Visible = false;
+            // 
+            // Label_Operation
+            // 
+            this.Label_Operation.AutoSize = true;
+            this.Label_Operation.Font = new System.Drawing.Font("Segoe UI Semilight", 10.75F);
+            this.Label_Operation.Location = new System.Drawing.Point(30, 19);
+            this.Label_Operation.Name = "Label_Operation";
+            this.Label_Operation.Size = new System.Drawing.Size(78, 20);
+            this.Label_Operation.TabIndex = 2;
+            this.Label_Operation.Text = "Operation:";
+            // 
+            // Label_Operation_Start_Time
+            // 
+            this.Label_Operation_Start_Time.AutoSize = true;
+            this.Label_Operation_Start_Time.Font = new System.Drawing.Font("Segoe UI Semilight", 10.75F);
+            this.Label_Operation_Start_Time.Location = new System.Drawing.Point(30, 62);
+            this.Label_Operation_Start_Time.Name = "Label_Operation_Start_Time";
+            this.Label_Operation_Start_Time.Size = new System.Drawing.Size(145, 20);
+            this.Label_Operation_Start_Time.TabIndex = 1;
+            this.Label_Operation_Start_Time.Text = "Operation started at:";
+            // 
+            // Textbox_Output
+            // 
+            this.Textbox_Output.Location = new System.Drawing.Point(34, 98);
+            this.Textbox_Output.Multiline = true;
+            this.Textbox_Output.Name = "Textbox_Output";
+            this.Textbox_Output.ReadOnly = true;
+            this.Textbox_Output.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Textbox_Output.Size = new System.Drawing.Size(926, 466);
+            this.Textbox_Output.TabIndex = 0;
+            // 
+            // Button_Log_Locations
+            // 
+            this.Button_Log_Locations.BackColor = System.Drawing.Color.Silver;
+            this.Button_Log_Locations.Enabled = false;
+            this.Button_Log_Locations.FlatAppearance.BorderSize = 0;
+            this.Button_Log_Locations.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Log_Locations.Location = new System.Drawing.Point(830, 212);
+            this.Button_Log_Locations.Name = "Button_Log_Locations";
+            this.Button_Log_Locations.Size = new System.Drawing.Size(35, 25);
+            this.Button_Log_Locations.TabIndex = 5;
+            this.Button_Log_Locations.TabStop = false;
+            this.Button_Log_Locations.Text = "...";
+            this.Button_Log_Locations.UseVisualStyleBackColor = false;
+            this.Button_Log_Locations.Click += new System.EventHandler(this.Button_Log_Locations_Click);
+            // 
+            // Button_Metadata_Output_Location
+            // 
+            this.Button_Metadata_Output_Location.BackColor = System.Drawing.Color.Silver;
+            this.Button_Metadata_Output_Location.FlatAppearance.BorderSize = 0;
+            this.Button_Metadata_Output_Location.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Metadata_Output_Location.Font = new System.Drawing.Font("Segoe UI Semilight", 12.75F);
+            this.Button_Metadata_Output_Location.ForeColor = System.Drawing.Color.Black;
+            this.Button_Metadata_Output_Location.Location = new System.Drawing.Point(848, 180);
+            this.Button_Metadata_Output_Location.Name = "Button_Metadata_Output_Location";
+            this.Button_Metadata_Output_Location.Size = new System.Drawing.Size(37, 25);
+            this.Button_Metadata_Output_Location.TabIndex = 11;
+            this.Button_Metadata_Output_Location.TabStop = false;
+            this.Button_Metadata_Output_Location.Text = "...";
+            this.Button_Metadata_Output_Location.UseVisualStyleBackColor = false;
+            this.Button_Metadata_Output_Location.Click += new System.EventHandler(this.Button_Metadata_Output_Location_Click);
+            // 
+            // Button_Metadata_Begin
+            // 
+            this.Button_Metadata_Begin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Button_Metadata_Begin.FlatAppearance.BorderSize = 0;
+            this.Button_Metadata_Begin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Metadata_Begin.Font = new System.Drawing.Font("Segoe UI Semilight", 13.75F);
+            this.Button_Metadata_Begin.ForeColor = System.Drawing.Color.White;
+            this.Button_Metadata_Begin.Location = new System.Drawing.Point(405, 496);
+            this.Button_Metadata_Begin.Name = "Button_Metadata_Begin";
+            this.Button_Metadata_Begin.Size = new System.Drawing.Size(167, 43);
+            this.Button_Metadata_Begin.TabIndex = 6;
+            this.Button_Metadata_Begin.TabStop = false;
+            this.Button_Metadata_Begin.Text = "Begin Operation";
+            this.Button_Metadata_Begin.UseVisualStyleBackColor = false;
+            this.Button_Metadata_Begin.Click += new System.EventHandler(this.Button_Metadata_Begin_Click);
+            // 
+            // Button_Metadata_Folder
+            // 
+            this.Button_Metadata_Folder.BackColor = System.Drawing.Color.Silver;
+            this.Button_Metadata_Folder.FlatAppearance.BorderSize = 0;
+            this.Button_Metadata_Folder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Metadata_Folder.Font = new System.Drawing.Font("Segoe UI Semilight", 12.75F);
+            this.Button_Metadata_Folder.ForeColor = System.Drawing.Color.Black;
+            this.Button_Metadata_Folder.Location = new System.Drawing.Point(848, 76);
+            this.Button_Metadata_Folder.Name = "Button_Metadata_Folder";
+            this.Button_Metadata_Folder.Size = new System.Drawing.Size(37, 25);
+            this.Button_Metadata_Folder.TabIndex = 2;
+            this.Button_Metadata_Folder.TabStop = false;
+            this.Button_Metadata_Folder.Text = "...";
+            this.Button_Metadata_Folder.UseVisualStyleBackColor = false;
+            this.Button_Metadata_Folder.Click += new System.EventHandler(this.Button_Metadata_Folder_Click);
+            // 
+            // Button_Delete_Begin
+            // 
+            this.Button_Delete_Begin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Button_Delete_Begin.FlatAppearance.BorderSize = 0;
+            this.Button_Delete_Begin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Delete_Begin.Font = new System.Drawing.Font("Segoe UI Semilight", 13.75F);
+            this.Button_Delete_Begin.ForeColor = System.Drawing.Color.White;
+            this.Button_Delete_Begin.Location = new System.Drawing.Point(405, 496);
+            this.Button_Delete_Begin.Name = "Button_Delete_Begin";
+            this.Button_Delete_Begin.Size = new System.Drawing.Size(167, 43);
+            this.Button_Delete_Begin.TabIndex = 6;
+            this.Button_Delete_Begin.TabStop = false;
+            this.Button_Delete_Begin.Text = "Begin Operation";
+            this.Button_Delete_Begin.UseVisualStyleBackColor = false;
+            this.Button_Delete_Begin.Click += new System.EventHandler(this.Button_Delete_Begin_Click);
+            // 
+            // Button_Delete_Folder_Picker
+            // 
+            this.Button_Delete_Folder_Picker.BackColor = System.Drawing.Color.Silver;
+            this.Button_Delete_Folder_Picker.FlatAppearance.BorderSize = 0;
+            this.Button_Delete_Folder_Picker.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Delete_Folder_Picker.Font = new System.Drawing.Font("Segoe UI Semilight", 12.75F);
+            this.Button_Delete_Folder_Picker.ForeColor = System.Drawing.Color.Black;
+            this.Button_Delete_Folder_Picker.Location = new System.Drawing.Point(848, 76);
+            this.Button_Delete_Folder_Picker.Name = "Button_Delete_Folder_Picker";
+            this.Button_Delete_Folder_Picker.Size = new System.Drawing.Size(37, 25);
+            this.Button_Delete_Folder_Picker.TabIndex = 2;
+            this.Button_Delete_Folder_Picker.TabStop = false;
+            this.Button_Delete_Folder_Picker.Text = "...";
+            this.Button_Delete_Folder_Picker.UseVisualStyleBackColor = false;
+            this.Button_Delete_Folder_Picker.Click += new System.EventHandler(this.Button_Delete_Folder_Picker_Click);
+            // 
+            // Button_Minimise
+            // 
+            this.Button_Minimise.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Button_Minimise.FlatAppearance.BorderSize = 0;
+            this.Button_Minimise.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Minimise.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Minimise.ForeColor = System.Drawing.Color.White;
+            this.Button_Minimise.Location = new System.Drawing.Point(944, 3);
+            this.Button_Minimise.Name = "Button_Minimise";
+            this.Button_Minimise.Size = new System.Drawing.Size(26, 27);
+            this.Button_Minimise.TabIndex = 1;
+            this.Button_Minimise.TabStop = false;
+            this.Button_Minimise.Text = "-";
+            this.Button_Minimise.UseVisualStyleBackColor = false;
+            this.Button_Minimise.Click += new System.EventHandler(this.Button_Minimise_Click);
+            // 
+            // Button_Close
+            // 
+            this.Button_Close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.Button_Close.FlatAppearance.BorderSize = 0;
+            this.Button_Close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Button_Close.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Button_Close.ForeColor = System.Drawing.Color.White;
+            this.Button_Close.Location = new System.Drawing.Point(976, 3);
+            this.Button_Close.Name = "Button_Close";
+            this.Button_Close.Size = new System.Drawing.Size(26, 27);
+            this.Button_Close.TabIndex = 0;
+            this.Button_Close.TabStop = false;
+            this.Button_Close.Text = "X";
+            this.Button_Close.UseVisualStyleBackColor = false;
+            this.Button_Close.Click += new System.EventHandler(this.Button_Close_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -784,12 +787,12 @@
             this.Page_Metadata.PerformLayout();
             this.Panel_Metadata_Checkboxes.ResumeLayout(false);
             this.Panel_Metadata_Checkboxes.PerformLayout();
-            this.Page_Output.ResumeLayout(false);
-            this.Page_Output.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Panel_Delete_Checkboxes.ResumeLayout(false);
+            this.Panel_Delete_Checkboxes.PerformLayout();
+            this.Page_Output.ResumeLayout(false);
+            this.Page_Output.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -838,13 +841,13 @@
         private FlatButton Button_Metadata_Output_Location;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label Label_Delete_Begin;
+        private System.Windows.Forms.Label Label_Delete_View_Output;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox Textbox_Delete_Folder_Path;
         private FlatButton Button_Delete_Begin;
         private FlatButton Button_Delete_Folder_Picker;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel Panel_Delete_Checkboxes;
         private System.Windows.Forms.CheckBox Checkbox_Delete_All;
         private System.Windows.Forms.CheckBox Checkbox_Delete_Metadata;
         private System.Windows.Forms.CheckBox Checkbox_Delete_Encrypt;

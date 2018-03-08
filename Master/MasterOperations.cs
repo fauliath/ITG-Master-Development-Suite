@@ -8,6 +8,8 @@ namespace Master
 
         public void Disable_All_Input()
         {
+            Label_Operation_Finished.Text = "Operation finished at: ";
+
             // metadata
             Panel_Metadata_Checkboxes.Enabled = false;
             Button_Metadata_Begin.Text = "Running...";
@@ -20,6 +22,15 @@ namespace Master
             Textbox_Output.Text = "";
             Label_Operation.Text = "Extracting metadata from " + metadata_folder;
             Label_Operation_Start_Time.Text = "Operation started at: " + DateTime.Now;
+
+            // delete
+            Textbox_Delete_Folder_Path.Enabled = false;
+            Button_Delete_Folder_Picker.Enabled = false;
+            Button_Delete_Begin.Enabled = false;
+            Button_Delete_Begin.Text = "Running...";
+            Panel_Delete_Checkboxes.Enabled = false;
+            Label_Operation.Text = "Securely deleting files from " + delete_folder;
+            Label_Delete_View_Output.Visible = true;
         }
 
         public void Enable_All_Input()
@@ -34,6 +45,15 @@ namespace Master
             Label_Operation_Finished.Visible = true;
             Textbox_Metadata_Output_Location.Enabled = true;
             Button_Metadata_Output_Location.Enabled = true;
+            Label_Operation_Finished.Text = "Operation finished at: " + DateTime.Now;
+
+            // delete
+            Textbox_Delete_Folder_Path.Enabled = true;
+            Button_Delete_Folder_Picker.Enabled = true;
+            Button_Delete_Begin.Enabled = true;
+            Button_Delete_Begin.Text = "Begin Operation";
+            Panel_Delete_Checkboxes.Enabled = true;
+            Label_Delete_View_Output.Visible = false;
             Label_Operation_Finished.Text = "Operation finished at: " + DateTime.Now;
         }
 

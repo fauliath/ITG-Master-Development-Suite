@@ -49,8 +49,13 @@ namespace Master
 
         private void Button_Metadata_Output_Location_Click(object sender, EventArgs e) { Metadata_Set_Output_File(); }
 
+
         #endregion
 
+        private void Button_Delete_Folder_Picker_Click(object sender, EventArgs e) { Delete_SetFolder(); }
 
+        private void Delete_Select_All_Checkboxes(object sender, EventArgs e) { Delete_Select_All_Checkboxes(); }
+
+        private void Button_Delete_Begin_Click(object sender, EventArgs e) { Delete_StartBackgroundWorker(); }
     }
 }
